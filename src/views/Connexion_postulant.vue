@@ -1,28 +1,29 @@
-<script lang="ts">
-  const emailP="exemple@gmail.com"
-  const passewordP=String
-</script>
-
 <template>
-=
-
-    <div id="connexion">
+  <div id="connexion">
     <p>Adresse mail {{ emailP }}</p>
-        <input v-model="emailP"/>
+    <input v-model="emailP" />
     <p>Mot de passe {{ passwordP }}</p>
-    <input v-model="passewordP"/>
-    </div>
+    <input v-model="passwordP" />
 
+    <router-link to="/profil_">
+      <button>Connexion</button>
+    </router-link>
 
-  
-<RouterLink to="/profil_postulant">
-  <button> Connexion </button>
-</RouterLink>
-
-<p>Probleme de connexion ?</p>
-<p>Pas de compte ?</p>
-<RouterLink to="/inscription">
-  <button>Inscription</button>
-</RouterLink>
-
+    <p>Problème de connexion ?</p>
+    <p>Pas de compte ?</p>
+    <router-link to="/inscription">
+      <button>Inscription</button>
+    </router-link>
+  </div>
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      emailP: "exemple@gmail.com",
+      passwordP: ""
+    };
+  }
+};
+</script>
