@@ -5,7 +5,7 @@
     <p>Mot de passe {{ passwordP }}</p>
     <input v-model="passwordP" />
 
-    <router-link to="/profil_">
+    <router-link to="/profil_postulant">
       <button>Connexion</button>
     </router-link>
 
