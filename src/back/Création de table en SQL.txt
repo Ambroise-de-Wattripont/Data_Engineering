@@ -1,0 +1,47 @@
+CREATE TABLE IF NOT EXISTS public."Demandeur"
+(
+    "Nom" character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    "Prenom" character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    "CV" bytea,
+    "Motivation" text COLLATE pg_catalog."default",
+    "Compétences" text COLLATE pg_catalog."default",
+    "Password" character(60)[] COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Demandeur_pkey" PRIMARY KEY ("Nom", "Prenom")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Demandeur"
+    OWNER to postgres;
+
+---------------------------
+
+CREATE TABLE IF NOT EXISTS public."Employeur"
+(
+    "Nom" character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    "Prenom" character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    "Entreprise" character varying(100) COLLATE pg_catalog."default",
+    "Embauche" boolean NOT NULL,
+    "Password" character(60) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Employeur_pkey" PRIMARY KEY ("Nom", "Prenom")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Employeur"
+    OWNER to postgres;
+
+------------------------------
+
+CREATE TABLE IF NOT EXISTS public."Annonce"
+(
+    "Titre" character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    "Employeur" character varying(60) COLLATE pg_catalog."default" NOT NULL,
+    "Description" text COLLATE pg_catalog."default",
+    CONSTRAINT "Annonce_pkey" PRIMARY KEY ("Titre", "Employeur")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Annonce"
+    OWNER to postgres;
