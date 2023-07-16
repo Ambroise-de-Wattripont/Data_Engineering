@@ -21,7 +21,6 @@ CREATE TABLE IF NOT EXISTS public."Employeur"
     "Nom" character varying(30) COLLATE pg_catalog."default" NOT NULL,
     "Prenom" character varying(30) COLLATE pg_catalog."default" NOT NULL,
     "Entreprise" character varying(100) COLLATE pg_catalog."default",
-    "Embauche" boolean NOT NULL,
     "Password" character(60) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "Employeur_pkey" PRIMARY KEY ("Nom", "Prenom")
 )
